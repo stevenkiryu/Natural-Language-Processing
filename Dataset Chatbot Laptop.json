@@ -1,0 +1,120 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time" , "Selamat bertemu kembali" , "Informasi mu bagus , jumpa lagi" , "Lain kali kita chatting lagi yuk"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon." , "Oke , Semoga harimu menyenangkan" , "Selamat bertemu kembali" , "Bye" , "Lain kali berkunjung kembali ke sini"],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me" , "Thanks sudah membantu" , "Terima kasih infonya"],
+         "responses": ["Happy to help!", "Any time!" , "Sama-sama" , "Senang membantu" , "Oke"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Maaf , kurang ngerti pertanyaanmu" , "Maaf , bisa diperjelas kembali pertanyaanmu"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["Halo.Ada saran untuk Laptop?", "Apa yang kamu bisa bantu ?", "Apakah ada support untuk Laptop ? ", "Tolong dong , bisa dibantu merekomendasikan sesuatu ?"],
+         "responses": ["Baik , saya bisa merekomendasikan Laptop. Butuhnya untuk Performance , Main Game , Kerja atau 2 in 1 ya", 
+			"Boleh. Anda butuh Laptop untuk Performance , Main Game , Kerja , atau 3 in 1" , 
+			"Boleh. Anda butuh Laptop untuk Performance , Main Game , Kerja , atau 2 in 1"],
+         "context": [""]
+        },
+        {"tag": "Performance",
+         "patterns": ["Performance"],
+         "responses": ["Apakah anda butuh harga yang cukup signifikan ? "],
+         "context": ["brand"]
+        },
+        {"tag": "main_game",
+         "patterns": ["Main Game" , "main" , "game"],
+         "responses": ["Apakah anda membutuhkan RAM yang besar ? "],
+         "context": ["brand"]
+        },
+        {"tag": "kerja",
+         "patterns": ["Kerja" , "kerja" , "job" , "Job"],
+         "responses": ["Oke , Apakah anda bekerja di bidang AI/Data Scientist , Design 3D , Gaming ? "],
+         "context": ["bekerja_advanced"]
+        },
+        {"tag": "merek",
+         "patterns": [],
+         "responses": ["Baik. Bisa dicek kembali apakah sudah terpenuhi ? "],
+         "context": [""]
+        },
+        {"tag": "2 in 1",
+         "patterns": ["2 in 1" , "ambil 2 boleh"],
+         "responses": ["Anda mau memilih yang mana saja dari kedua di atas ? "],
+         "context": [""]
+        },
+	{"tag": "main_game_dan_performance",
+	 "patterns": ["Main Game dan Performance" , "main game & Performance"],
+	 "responses": ["Apakah anda mau memperbagus performance saat bermain game ? "],
+         "context": [""]
+	},
+	{"tag": "main_game_dan_kerja",
+	 "patterns": ["Main Game dan kerja" , "main game & kerja"],
+	 "responses": ["Apakah anda bekerja di bidang Gaming ? "],
+	 "context": [""]
+	},
+	{"tag": "kerja_dan_performance",
+	 "patterns": ["kerja dan performance" , "performance & kerja"],
+	 "responses": ["Apakah anda bekerja di bidang AI ? "],
+	 "context" : [""]
+	},
+	{"tag": "3 in 1",
+	 "patterns": ["3 in 1" , "3 3 nya"],
+         "responses": ["Oke , Apakah anda bekerja di bidang AI/Data Scientist , Design 3D , Gaming ? "],
+         "context": ["brand"]
+	},
+        {"tag": "bekerja_advanced",
+         "patterns": ["mau" , "ya" , "Betul" , "betul" , "tidak" , "bukan"],
+         "responses": ["Oke , Apakah anda mau harga laptop yang murah , sedang , atau boleh dengan harga mahal ?"],
+         "context": ["brand"]
+        },
+        {"tag": "brand",
+         "patterns": ["Ya" , "Betul" , "tidak" , "Murah" , "Boleh mahal" , "Sedang" , "Murah!" , "Boleh" , "jangan"],
+         "responses": ["Baik. Anda lebih suka merek apa ya ? ( ASUS , MSI , Acer , Dell , atau mau bebas )"],
+         "context": [""]
+        },
+        {"tag": "bebas",
+         "patterns": ["Bebas" , "bebas"],
+         "responses": ["Apakah anda mau merek ASUS ? mereknya sudah canggih loh" , "Apakah anda mau merek Dell ? Harganya terjangkau loh "],
+         "context": [""]
+        },
+        {"tag": "rekomendasi",
+         "patterns": [],
+         "responses": ["Loading laptop rekomendasi details"],
+         "context": ["rekomendasi laptop"]
+        },
+	{"tag": "ASUS",
+	 "patterns": ["ASUS" , "boleh direkomendasikan kembali" , "kurang tertarik , maaf"],
+         "responses": [" Laptop Rekomendasi \n  ( Nama : ASUS ROG Zephyrus S )   \n   ( Merek : ASUS ) \n ( Size : 15,6 inch FHD ) \n  ( Processor : i7-8750H ) \n  ( RAM : 16 GB ) \n ( GPU : NVIDIA GEFORCE RTX 2070 8 GB ) \n  ( Storage : 512 GB SSD ) \n  ( Harga : 25.969.093,8 )  \n  ( Link : https://www.amazon.com/dp/B07KS1JF2H?tag=wuuff-20&linkCode=ogi&th=1&psc=1 ) " ,
+                      "Laptop Rekomendasi \n ( Nama : ASUS ROG Strix Scar III ) \n ( Merek : ASUS ) \n ( Size : 15,6 inch FHD ) \n ( Processor : i7-9750H ) \n ( RAM : 16 GB ) \n ( GPU : NVIDIA GEFORCE RTX 2060 8 GB ) \n ( Storage : 1000 GB SSD ) \n ( harga : 33.188.855,7 ) \n ( Link : https://www.amazon.com/dp/B07QRGSFS7?tag=georiot-us-default-20&th=1&psc=1&ascsubtag=laptopmag-id-2676843799551934500-20&geniuslink=true ) "],
+	 "context": [""]
+	},
+	{"tag": "MSI",
+	 "patterns": ["MSI" , "boleh direkomendasikan kembali" , "kurang tertarik , maaf"],
+	 "responses": ["Laptop Rekomendasi \n ( Nama : MSI GS66 Stealth ) \n  ( Merek : MSI ) \n ( Size : 15,6 inch FHD ) \n ( Processor : Intel Core i7-10875H ) \n ( RAM : 32 ) \n ( GPU : NVIDIA GEFORCE RTX 2070 Super Max-Q 8 GB ) \n ( Storage : 512 GB SSD ) \n ( Harga : 28.860.000 ) \n ( Link : https://www.amazon.com/dp/B08965KKM5?tag=wuuff-20&linkCode=ogi&th=1&psc=1 ) " , 
+                       "Laptop Rekomendasi \n ( Nama : MSI GS65 Stealth ) \n ( Merek : MSI ) \n ( Size : 15,6 inch FHD ) \n ( Processor : Intel Core i7-8750H ) \n ( RAM : 16 ) \n ( GPU : NVIDIA GEFORCE GTX 1070 8 GB ) \n ( Storage : 512 GB SSD ) \n ( Harga : 25.000.000,0 ) \n ( Link : https://www.amazon.com/Stealth-THIN-037-Gaming-i7-8750H-Diamond/dp/B07KDMP51V/ref=sr_1_6?dchild=1&keywords=msi+gs65+stealth+GTX+1070&qid=1617120347&sr=8-6 )"],
+	 "context": [""]
+	},
+	{"tag": "Acer",
+	 "patterns": ["Acer" , "boleh direkomendasikan kembali" , "kurang tertarik , maaf"],
+	 "responses": ["Laptop Rekomendasi \n ( Nama : Acer Predator 15 ) \n ( Merek : Acer ) \n ( Size : 15,6 inch FHD ) \n ( Processor : Intel Core i7-7700HQ ) \n ( RAM : 16 ) \n ( GPU : NVIDIA GEFORCE GTX 1070 8GB ) \n ( Storage : 256 GB SSD ) \n ( Harga : 17.447.457,3 ) \n ( Link : https://www.amazon.com/dp/B01MR2WT9P?tag=wuuff-20&linkCode=ogi&th=1&psc=1 )" ,
+		       "Laptop Rekomendasi \n ( Nama : Acer Predator Triton 700 ) \n ( Merek : Acer ) \n ( Size : 15,6 FHD ) \n ( Processor : Intel Core i7-7700HQ ) \n ( RAM : 32 ) \n ( GPU : NVIDIA GEFORCE GTX 1080 8 GB ) \n ( Storage : 512 GB SSD ) \n ( Harga : 21.644.855,7 ) \n ( Link : https://www.amazon.com/dp/B0756TR51D?tag=favouriteblog-20&linkCode=ogi&th=1&psc=1 ) "],
+	 "context": [""]
+	},
+	{"tag": "Dell",
+	 "patterns": ["Dell" , "Boleh direkomendasikan kembali" , "kurang tertarik , maaf"],
+	 "responses": ["Laptop Rekomendasi \n ( Nama : Dell G5 15 ) \n ( Merek : Dell ) \n ( Size : 15.6 inch FHD ) \n ( Processor : Intel Core i7-9750H Quad Core ) \n ( RAM : 16 ) \n ( GPU : NVIDIA GEFORCE GTX 1650 Ti 4 GB ) \n ( Storage : 256 GB SSD ) \n ( Harga : 16.060.012,8 ) \n ( Link : https://www.amazon.com/dp/B07R7XCZD7?tag=wuuff-20&linkCode=ogi&th=1&psc=1 )" , 
+		       "Laptop Rekomendasi \n ( Nama : Dell G3 15 ) \n ( Merek : Dell ) \n ( Size : 15.6 inch FHD ) \n ( Processor : Intel Core i7-9750H ) \n ( RAM : 16 ) \n ( GPU : NVIDIA GEFORCE GTX 1660 Ti Max-Q ) \n ( Storage : 512 GB SSD ) \n ( Harga : 11.699.000,00 ) \n ( Link : https://www.amazon.com/dp/B07VKZY7KV?tag=georiot-us-default-20&th=1&psc=1&ascsubtag=laptopmag-id-8795617346713422000-20&geniuslink=true ) "],
+	 "context": [""]
+	}
+
+   ]
+}
