@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Chatop</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        .wallpaper {
+            margin-top: 75px;
+            margin-left: 50px;
+        }
+        .navbar-lightskyblue {
+            background-color: lightskyblue;
+
+        }
+        h1 {
+            color : white;
+            margin-top: -50px;
+            margin-left: 140px;
+            font-size: 36px;
+            font-family: monospace;
+        }
+
+        .Userdialog {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            float: right;
+            color: #aaa;
+        }
+        .Userdialog::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .Chatbotdialog {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            float: left;
+            color: #aaa;
+        }
+
+        .sendmessage {
+            position: fixed;
+            bottom: 8px;
+            width: 300px;
+        }
+
+        #chatbox {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        margin-top: 60px;
+      }
+      #userInput {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        margin-top: 60px;
+      }
+      #textInput {
+        width: 90%;
+        border: none;
+        border-bottom: 3px solid black;
+        font-family: monospace;
+        font-size: 17px;
+      }
+      .userText {
+        color: white;
+        font-family: monospace;
+        font-size: 17px;
+        text-align: right;
+        line-height: 30px;
+      }
+      .userText span {
+        background-color: #808080;
+        padding: 10px;
+        border-radius: 2px;
+      }
+      .botText {
+        color: white;
+        font-family: monospace;
+        font-size: 17px;
+        text-align: left;
+        line-height: 30px;
+      }
+      .botText span {
+        background-color: #4169e1;
+        padding: 10px;
+        border-radius: 2px;
+      }
+
+      #just-line-break {
+        white-space: pre-line;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar-lightskyblue">
+        <a class="navbar-brand" href="#" style="margin-left: 25px;">
+            <img src="{{ url_for('static' , filename ='images/Chatop Wallpaper.jpg')}}" , alt="Chatop Background Wallpaper" width="100" height="100" style="margin-top: 25px;border-radius: 50%;">
+            
+            <div class="chatbot_name">
+                <h1>Chatop</h1>
+            </div>
+        </a>
+    </nav>
+
+    <div class="box"></div>
+    <div class="boxed">
+      <div>
+        <div id="chatbox">
+          <p class="botText">
+            <span>Hi! I'm Chatop your personal ChatBot laptop Recommendation</span>
+          </p>
+        </div>
+        <div id="userInput">
+          <input id="textInput" type="text" name="msg" placeholder="Message" />
+          <input type="image" img src="{{ url_for('static' , filename ='images/Icon send chatbot.png')}}" , alt="submit" width="60" height="40" button onclick="getBotResponse()"/>
+        </div>
+      </div>
+    </div>
+    <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "nearest", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml ='<p class="botText"><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "nearest", behavior: "smooth" });
+          });
+        }
+      </script>
+</body>
+</html>
