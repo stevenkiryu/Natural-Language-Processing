@@ -2,8 +2,9 @@
   "name": "chatbot",
   "version": "1.0.0",
   "description": "Model Deployment",
-  "main": "model estimating.js",
+  "main": "app.py",
   "scripts": {
+    "start": "app.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Steven",
