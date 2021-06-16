@@ -142,7 +142,7 @@
           document
             .getElementById("userInput")
             .scrollIntoView({ block: "nearest", behavior: "smooth" });
-          $.get("/get", { msg: rawText }).done(function(data) {
+          $.get("/chatop", { msg: rawText }).done(function(data) {
             var botHtml ='<p class="botText"><span>' + data + "</span></p>";
             $("#chatbox").append(botHtml);
             document
