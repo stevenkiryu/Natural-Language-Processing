@@ -71,7 +71,7 @@
          "responses": ["Oke , Apakah anda bekerja di bidang AI/Data Scientist , Design 3D , Gaming ? "],
          "context": ["brand"]
 	},
-        {"tag": "bekerja_advanced",
+        {"tag": "harga",
          "patterns": ["mau" , "ya" , "Betul" , "betul" , "tidak" , "bukan"],
          "responses": ["Oke , Apakah anda mau harga laptop yang murah , sedang , atau boleh dengan harga mahal ?"],
          "context": ["brand"]

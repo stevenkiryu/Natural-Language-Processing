@@ -1,0 +1,1 @@
+web: gunicorn -w 4 chatbot_recommender_laptop_with_lstm:app
