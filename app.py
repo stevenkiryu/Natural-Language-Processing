@@ -223,7 +223,7 @@ def home():
 list_question = []
 list_answer = []
 
-@app.route("/chatop")
+@app.route("/get")
 def get_bot_response():    
     userText = request.args.get('msg')
     list_question.append(userText)
